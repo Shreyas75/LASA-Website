@@ -77,7 +77,7 @@ export default function UpcomingEventsGallery() {
     if (!showCarousel || paused || lightboxSrc) return;
     const timer = setInterval(() => {
       setCurrentPage((prev) => (prev + 1) % totalPages);
-    }, 2500);
+    }, 5000);
     return () => clearInterval(timer);
   }, [showCarousel, paused, lightboxSrc, totalPages]);
 

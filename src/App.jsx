@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import OurActivities from './pages/OurActivities';
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/donate" element={<Donate />} />
         </Routes>
       </main>
+      <Footer />
     </BrowserRouter>
   );
 }
