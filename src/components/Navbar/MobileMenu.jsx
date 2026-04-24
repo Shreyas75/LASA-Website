@@ -95,10 +95,10 @@ export default function MobileMenu({ isOpen, onClose, navLinks }) {
         aria-hidden="true"
       />
 
-      {/* Sidebar */}
+      {/* Top Dropdown Menu */}
       <nav
-        className={`fixed top-0 right-0 z-50 h-full w-72 bg-white border-l border-lasa-200 shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed top-0 left-0 z-50 w-full max-h-screen flex flex-col bg-white border-b border-lasa-200 shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden ${
+          isOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
         {/* Close button */}
@@ -119,7 +119,7 @@ export default function MobileMenu({ isOpen, onClose, navLinks }) {
         </div>
 
         {/* Nav items */}
-        <div className="py-2 overflow-y-auto h-[calc(100%-65px)]">
+        <div className="py-2 overflow-y-auto flex-1">
           {navLinks.map((item) => (
             <AccordionItem key={item.path} item={item} onClose={onClose} />
           ))}
