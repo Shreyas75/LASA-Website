@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="flex items-start pt-24 md:pt-32">
+      <section className="flex items-start pt-12 md:pt-20 lg:pt-32">
         <div className="max-w-7xl mx-auto px-8 lg:px-16 w-full">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
 
