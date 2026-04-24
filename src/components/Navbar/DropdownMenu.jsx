@@ -4,7 +4,7 @@ export default function DropdownMenu({ items }) {
   return (
     <div className="absolute top-full left-0 pt-2">
       <ul
-        className="min-w-[200px] bg-lasa-100/90 backdrop-blur-lg border border-lasa-200 rounded-xl shadow-[0_8px_32px_rgba(57,88,134,0.15)] py-2 origin-top"
+        className="min-w-[200px] bg-white/95 backdrop-blur-lg border border-lasa-200 rounded-xl shadow-[0_8px_32px_rgba(57,88,134,0.15)] py-2 origin-top"
         style={{
           animation: 'dropdown 200ms ease-out',
         }}
