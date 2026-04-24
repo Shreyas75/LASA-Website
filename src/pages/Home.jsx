@@ -1,4 +1,4 @@
-import heroLogo from '../Untitled_design-removebg-preview (1).png';
+
 import UpcomingEventsGallery from '../components/UpcomingEventsGallery';
 import RecentEventsSection from '../components/RecentEventsSection';
 
@@ -31,7 +31,7 @@ export default function Home() {
             {/* Right — Logo, Tagline & Org Name */}
             <div className="flex-shrink-0 flex flex-col items-center">
               <img
-                src={heroLogo}
+                src="/logo-hires.png"
                 alt="LASA Foundation Logo"
                 className="w-48 sm:w-56 lg:w-64 h-auto"
               />

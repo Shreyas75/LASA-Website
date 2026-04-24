@@ -67,7 +67,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <img
-              src="/hero-logo.png"
+              src="/logo-hires.png"
               alt="LASA Foundation"
               className="h-16"
             />
