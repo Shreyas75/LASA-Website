@@ -6,6 +6,7 @@ import ErrorState from '../components/common/ErrorState';
 import { CONTACT } from '../constants/contact';
 import { formatEventDate } from '../utils/dateDisplay';
 import { shareEvent } from '../utils/shareEvent';
+import { EVENT_FLYER_ASPECT_RATIO } from '../constants/eventMedia';
 
 export default function EventDetails() {
   const registerActionClass =
@@ -113,30 +114,35 @@ export default function EventDetails() {
         </Link>
 
         <div className="mt-6 overflow-hidden rounded-3xl border border-lasa-200 bg-white shadow-lg">
-          <div className="relative h-72 overflow-hidden bg-lasa-100 sm:h-80 md:h-96">
-            {heroImage ? (
-              <img
-                src={heroImage}
-                alt={eventTitle}
-                className="h-full w-full object-cover"
-              />
-            ) : (
-              <div className="flex h-full items-center justify-center text-sm text-lasa-500">
-                No image available
+          {heroImage ? (
+            <div className="border-b border-lasa-200 bg-lasa-50 p-4 sm:p-6">
+              <div
+                className="mx-auto max-w-sm overflow-hidden rounded-xl border border-lasa-200 bg-white shadow-sm"
+                style={{ aspectRatio: EVENT_FLYER_ASPECT_RATIO }}
+              >
+                <img
+                  src={heroImage}
+                  alt={eventTitle}
+                  className="h-full w-full object-contain"
+                />
               </div>
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
-            <div className="absolute bottom-5 left-5 right-5">
-              <p className="text-xs font-semibold uppercase tracking-wide text-white/85">
-                {formatEventDate(eventDateValue, { variant: 'full' })}
-              </p>
-              <h1 className="mt-2 text-2xl font-semibold text-white sm:text-3xl">
-                {eventTitle}
-              </h1>
-              {event.location && (
-                <p className="mt-2 text-sm text-white/85 sm:text-base">{event.location}</p>
-              )}
             </div>
+          ) : (
+            <div className="flex h-48 items-center justify-center border-b border-lasa-200 bg-lasa-100 text-sm text-lasa-500">
+              No image available
+            </div>
+          )}
+
+          <div className="border-b border-lasa-200 px-4 py-5 sm:px-6">
+            <p className="text-xs font-semibold uppercase tracking-wide text-lasa-400">
+              {formatEventDate(eventDateValue, { variant: 'full' })}
+            </p>
+            <h1 className="mt-2 text-2xl font-semibold text-lasa-700 sm:text-3xl">
+              {eventTitle}
+            </h1>
+            {event.location && (
+              <p className="mt-2 text-sm text-lasa-500 sm:text-base">{event.location}</p>
+            )}
           </div>
 
           <div className="grid gap-8 px-4 py-6 sm:px-6 sm:py-8 lg:grid-cols-[1.1fr_0.9fr]">
@@ -155,8 +161,12 @@ export default function EventDetails() {
                   </h3>
                   <div className="mt-3 grid gap-3 sm:grid-cols-2">
                     {gallery.map((url, index) => (
-                      <div key={`${url}-${index}`} className="aspect-[16/9] overflow-hidden rounded-xl border border-lasa-200">
-                        <img src={url} alt={`Gallery ${index + 1}`} className="h-full w-full object-cover" />
+                      <div
+                        key={`${url}-${index}`}
+                        className="overflow-hidden rounded-xl border border-lasa-200 bg-lasa-50"
+                        style={{ aspectRatio: EVENT_FLYER_ASPECT_RATIO }}
+                      >
+                        <img src={url} alt={`Gallery ${index + 1}`} className="h-full w-full object-contain" />
                       </div>
                     ))}
                   </div>

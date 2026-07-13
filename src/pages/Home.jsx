@@ -11,17 +11,24 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 w-full">
           <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
             <div className="text-center lg:text-left">
-              <h1 className="mt-4 text-2xl font-display text-lasa-700 leading-tight sm:text-4xl lg:text-6xl">
-                Welcome to LASA Foundation
-              </h1>
-              <p className="mt-5 text-sm text-lasa-600/90 leading-relaxed max-w-2xl mx-auto sm:text-base lg:text-lg lg:mx-0">
-                We are a charitable organization dedicated to undertaking community
-                service activities based on Five Universal Human Values – Truth,
-                Non-violence, Peace, Love, and Right Conduct. The acronym LASA
-                stands for "Love All, Serve All". Our members come from all walks of life
-                and share a common goal – to empower the community around us through
-                the practice of Love and Service.
-              </p>
+              <div className="mx-auto w-fit max-w-full lg:mx-0">
+                <h1 className="mt-4 font-display leading-tight text-lasa-700">
+                  <span className="block text-2xl font-normal text-lasa-600 sm:text-3xl lg:text-4xl">
+                    Welcome to
+                  </span>
+                  <span className="mt-1 block text-2xl sm:text-4xl lg:text-6xl">
+                    LASA Foundation
+                  </span>
+                </h1>
+                <p className="mt-5 text-justify text-sm leading-relaxed text-lasa-600/90 sm:text-base lg:text-lg">
+                  We are a charitable organization dedicated to undertaking community
+                  service activities based on Five Universal Human Values – Truth,
+                  Non-violence, Peace, Love, and Right Conduct. The acronym LASA
+                  stands for "Love All, Serve All". Our members come from all walks of life
+                  and share a common goal – to empower the community around us through
+                  the practice of Love and Service.
+                </p>
+              </div>
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
                 <Link

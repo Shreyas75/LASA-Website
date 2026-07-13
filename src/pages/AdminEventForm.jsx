@@ -11,6 +11,7 @@ import { uploadMedia } from '../api/media';
 import { useAuth } from '../auth/AuthProvider';
 import LoadingState from '../components/common/LoadingState';
 import ErrorState from '../components/common/ErrorState';
+import { EVENT_FLYER_ASPECT_RATIO } from '../constants/eventMedia';
 
 const INITIAL_STATE = {
   title: '',
@@ -273,11 +274,14 @@ export default function AdminEventForm() {
             <div className="space-y-6 rounded-2xl border border-lasa-200 bg-white p-6 shadow-sm">
               <Field label="Cover Image">
                 {formState.coverImageUrl ? (
-                  <div className="mt-3 overflow-hidden rounded-xl border border-lasa-200">
+                  <div
+                    className="mt-3 overflow-hidden rounded-xl border border-lasa-200 bg-lasa-50"
+                    style={{ aspectRatio: EVENT_FLYER_ASPECT_RATIO }}
+                  >
                     <img
                       src={formState.coverImageUrl}
                       alt="Cover"
-                      className="h-48 w-full object-cover"
+                      className="h-full w-full object-contain"
                     />
                   </div>
                 ) : (
@@ -343,8 +347,11 @@ export default function AdminEventForm() {
             {formState.flyerUrl && (
               <div className="mt-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-lasa-400">Selected Flyer</p>
-                <div className="mt-2 overflow-hidden rounded-xl border border-lasa-200">
-                  <img src={formState.flyerUrl} alt="Selected flyer" className="h-64 w-full object-cover" />
+                <div
+                  className="mt-2 overflow-hidden rounded-xl border border-lasa-200 bg-lasa-50"
+                  style={{ aspectRatio: EVENT_FLYER_ASPECT_RATIO }}
+                >
+                  <img src={formState.flyerUrl} alt="Selected flyer" className="h-full w-full object-contain" />
                 </div>
                 <a
                   href={formState.flyerUrl}
@@ -365,9 +372,10 @@ export default function AdminEventForm() {
                     key={url}
                     onClick={() => handleSelectFlyer(url)}
                     disabled={flyerLoading}
-                    className="overflow-hidden rounded-xl border border-lasa-200 bg-white text-left transition-all hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-70"
+                    className="overflow-hidden rounded-xl border border-lasa-200 bg-lasa-50 text-left transition-all hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-70"
+                    style={{ aspectRatio: EVENT_FLYER_ASPECT_RATIO }}
                   >
-                    <img src={url} alt="Flyer option" className="h-56 w-full object-cover" />
+                    <img src={url} alt="Flyer option" className="h-full w-full object-contain" />
                     <div className="px-4 py-3">
                       <p className="text-xs font-semibold text-lasa-500">Select this flyer</p>
                     </div>

@@ -5,6 +5,7 @@ import LoadingState from '../components/common/LoadingState';
 import ErrorState from '../components/common/ErrorState';
 import EmptyState from '../components/common/EmptyState';
 import { formatEventDate } from '../utils/dateDisplay';
+import { EVENT_FLYER_ASPECT_RATIO } from '../constants/eventMedia';
 
 export default function Events() {
   const sortOptions = [
@@ -254,14 +255,17 @@ export default function Events() {
                 return (
                   <article
                     key={eventId}
-                    className="flex h-[18rem] md:h-[18.75rem] flex-col overflow-hidden rounded-2xl border border-lasa-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                    className="flex flex-col overflow-hidden rounded-2xl border border-lasa-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                   >
-                    <div className="relative h-40 overflow-hidden md:h-44">
+                    <div
+                      className="relative w-full overflow-hidden bg-lasa-50"
+                      style={{ aspectRatio: EVENT_FLYER_ASPECT_RATIO }}
+                    >
                       {image ? (
                         <img
                           src={image}
                           alt={title}
-                          className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                          className="h-full w-full object-contain"
                           loading="lazy"
                         />
                       ) : (

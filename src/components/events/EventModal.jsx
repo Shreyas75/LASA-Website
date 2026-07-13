@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { CONTACT } from '../../constants/contact';
 import { formatEventDate } from '../../utils/dateDisplay';
 import { shareEvent } from '../../utils/shareEvent';
+import { EVENT_FLYER_ASPECT_RATIO } from '../../constants/eventMedia';
 
 export default function EventModal({ event, onClose }) {
   const [sharing, setSharing] = useState(false);
@@ -81,7 +82,10 @@ export default function EventModal({ event, onClose }) {
 
         {image && (
           <div className="border-b border-lasa-200 bg-lasa-50 p-3 sm:p-4">
-            <div className="mx-auto overflow-hidden rounded-xl border border-lasa-200 bg-white" style={{ aspectRatio: '4 / 3' }}>
+            <div
+              className="mx-auto max-w-sm overflow-hidden rounded-xl border border-lasa-200 bg-white"
+              style={{ aspectRatio: EVENT_FLYER_ASPECT_RATIO }}
+            >
               <img
                 src={image}
                 alt={eventTitle}
@@ -179,8 +183,12 @@ export default function EventModal({ event, onClose }) {
               <p className="text-xs font-semibold uppercase tracking-wide text-lasa-400">Gallery</p>
               <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-3">
                 {event.gallery.map((url, index) => (
-                  <div key={`${url}-${index}`} className="overflow-hidden rounded-xl border border-lasa-200">
-                    <img src={url} alt={`Gallery ${index + 1}`} className="h-28 w-full object-cover" />
+                  <div
+                    key={`${url}-${index}`}
+                    className="overflow-hidden rounded-xl border border-lasa-200 bg-lasa-50"
+                    style={{ aspectRatio: EVENT_FLYER_ASPECT_RATIO }}
+                  >
+                    <img src={url} alt={`Gallery ${index + 1}`} className="h-full w-full object-contain" />
                   </div>
                 ))}
               </div>

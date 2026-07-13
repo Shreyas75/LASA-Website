@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { formatEventDate } from '../../utils/dateDisplay';
+import { EVENT_FLYER_ASPECT_RATIO } from '../../constants/eventMedia';
 
 export default function EventCard({ event, actions, onClick, to }) {
   const cover = event.coverImageUrl || event.flyerUrl || event.gallery?.[0];
@@ -39,7 +40,10 @@ export default function EventCard({ event, actions, onClick, to }) {
       role={isButton ? 'button' : undefined}
       tabIndex={isButton ? 0 : undefined}
     >
-      <div className="relative w-full bg-lasa-100" style={{ aspectRatio: '4 / 3' }}>
+      <div
+        className="relative w-full bg-lasa-50"
+        style={{ aspectRatio: EVENT_FLYER_ASPECT_RATIO }}
+      >
         {cover ? (
           <img
             src={cover}

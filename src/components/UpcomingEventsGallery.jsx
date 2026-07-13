@@ -6,6 +6,7 @@ import ErrorState from './common/ErrorState';
 import EmptyState from './common/EmptyState';
 import EventModal from './events/EventModal';
 import { formatEventDate } from '../utils/dateDisplay';
+import { EVENT_FLYER_ASPECT_RATIO } from '../constants/eventMedia';
 
 export default function UpcomingEventsGallery() {
   const [events, setEvents] = useState([]);
@@ -150,7 +151,10 @@ export default function UpcomingEventsGallery() {
                       className="group flex w-full max-w-sm flex-col items-center rounded-xl bg-white p-3 text-left shadow-xl transition-transform duration-200 hover:scale-105"
                       onClick={() => setSelectedEvent(event)}
                     >
-                      <div className="relative mb-3 w-full overflow-hidden rounded-lg border border-lasa-200 bg-lasa-50" style={{ aspectRatio: '1 / 1' }}>
+                      <div
+                        className="relative mb-3 w-full overflow-hidden rounded-lg border border-lasa-200 bg-lasa-50"
+                        style={{ aspectRatio: EVENT_FLYER_ASPECT_RATIO }}
+                      >
                         {eventImage ? (
                           <img
                             src={eventImage}
