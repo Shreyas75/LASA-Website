@@ -4,6 +4,8 @@ import logoEmblem from '/finallogo.png';
 import logoWrite from '/write.jpeg';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-white border-t border-lasa-200 pt-12 pb-8 mt-16 sm:pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
@@ -76,12 +78,12 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between pt-8 border-t border-lasa-200/60 gap-6 md:gap-4">
           <p className="text-xs font-medium text-lasa-500/80 text-center md:text-left">
-            © 2025 LASA Foundation Inc. All Rights Reserved.
+            © {currentYear} LASA Foundation Inc. All Rights Reserved.
           </p>
           <div className="flex flex-wrap justify-center md:justify-end items-center gap-4 md:gap-6 text-xs font-medium text-lasa-500/80">
-            <Link to="/legal" className="hover:text-lasa-600 transition-colors">Legal</Link>
-            <Link to="/privacy-policy" className="hover:text-lasa-600 transition-colors">Privacy Policy</Link>
-            <Link to="/terms-and-conditions" className="hover:text-lasa-600 transition-colors">Terms & Conditions</Link>
+            <Link to="/" className="hover:text-lasa-600 transition-colors">Legal</Link>
+            <Link to="/" className="hover:text-lasa-600 transition-colors">Privacy Policy</Link>
+            <Link to="/" className="hover:text-lasa-600 transition-colors">Terms & Conditions</Link>
           </div>
         </div>
       </div>

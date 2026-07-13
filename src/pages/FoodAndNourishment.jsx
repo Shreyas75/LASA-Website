@@ -1,6 +1,3 @@
-import ScrollReveal from '../components/common/ScrollReveal';
-import { revealDelay } from '../constants/motion';
-
 const SOCIOCARE_PROGRAMS = [
   {
     title: 'Nutritional Security and Food Pantry Services',
@@ -42,95 +39,80 @@ export default function FoodAndNourishment() {
 
       <div className="relative border-b border-lasa-200 bg-gradient-to-b from-lasa-100/95 to-lasa-50/90">
         <div className="mx-auto w-full max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
-          <ScrollReveal delay={revealDelay(0, { base: 20 })}>
-            <p className="reading-kicker text-xs font-semibold uppercase text-lasa-500">
-              Sociocare: Community Welfare and Social Upliftment
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={revealDelay(1, { base: 20 })}>
-            <h1 className="reading-title mt-3 text-4xl font-display text-lasa-700 sm:text-6xl">
-              Strengthening the social fabric
-            </h1>
-          </ScrollReveal>
-          <ScrollReveal delay={revealDelay(2, { base: 20 })}>
-            <ul className="reading-copy mt-5 list-disc space-y-2 pl-5 text-[15px] text-lasa-600 sm:text-[1.03rem]">
-              <li>
-                Sociocare represents the practical expression of our motto, "Love All, Serve
-                All," at the societal level.
-              </li>
-              <li>
-                It is our comprehensive commitment to improving the social fabric, environmental
-                well-being, and overall quality of life for the larger community.
-              </li>
-            </ul>
-          </ScrollReveal>
+          <p className="reading-kicker text-xs font-semibold uppercase text-lasa-500">
+            Sociocare: Community Welfare and Social Upliftment
+          </p>
+          <h1 className="reading-title mt-3 text-4xl font-display text-lasa-700 sm:text-6xl">
+            Strengthening the social fabric
+          </h1>
+          <ul className="reading-copy mt-5 list-disc space-y-2 pl-5 text-[15px] text-lasa-600 sm:text-[1.03rem]">
+            <li>
+              Sociocare represents the practical expression of our motto, "Love All, Serve
+              All," at the societal level.
+            </li>
+            <li>
+              It is our comprehensive commitment to improving the social fabric, environmental
+              well-being, and overall quality of life for the larger community.
+            </li>
+          </ul>
         </div>
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-4 pt-10 sm:px-6 sm:pt-14">
-        <ScrollReveal>
-          <div className="narrative-panel rounded-3xl p-6 sm:p-8">
-            <p className="reading-kicker text-[11px] font-semibold uppercase text-lasa-500">
-              Sociocare Scope
-            </p>
-            <ul className="reading-copy mt-3 list-disc space-y-2 pl-5 text-[15px] text-lasa-600 sm:text-base">
-              <li>
-                While our medical and educational programs heal the body and empower the mind, our
-                Sociocare initiatives focus on restoring dignity, ensuring food security, and
-                creating a supportive ecosystem for vulnerable populations.
-              </li>
-              <li>
-                Our Sociocare framework addresses systemic social challenges through dedicated,
-                volunteer-driven programs.
-              </li>
-            </ul>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={revealDelay(0, { base: 110, step: 90 })}>
-          <p className="reading-kicker mt-8 text-xs font-semibold uppercase text-lasa-500">
-            Programs in Action
+        <div className="narrative-panel rounded-3xl p-6 sm:p-8">
+          <p className="reading-kicker text-[11px] font-semibold uppercase text-lasa-500">
+            Sociocare Scope
           </p>
-        </ScrollReveal>
+          <ul className="reading-copy mt-3 list-disc space-y-2 pl-5 text-[15px] text-lasa-600 sm:text-base">
+            <li>
+              While our medical and educational programs heal the body and empower the mind, our
+              Sociocare initiatives focus on restoring dignity, ensuring food security, and
+              creating a supportive ecosystem for vulnerable populations.
+            </li>
+            <li>
+              Our Sociocare framework addresses systemic social challenges through dedicated,
+              volunteer-driven programs.
+            </li>
+          </ul>
+        </div>
+
+        <p className="reading-kicker mt-8 text-xs font-semibold uppercase text-lasa-500">
+          Programs in Action
+        </p>
 
         <div className="mt-4 grid gap-5 lg:grid-cols-2 lg:[grid-auto-rows:1fr]">
-          {SOCIOCARE_PROGRAMS.map((program, index) => (
-            <ScrollReveal
+          {SOCIOCARE_PROGRAMS.map((program) => (
+            <article
               key={program.title}
-              delay={revealDelay(index, { base: 180 })}
-              direction={index % 2 === 0 ? 'up' : 'left'}
+              className="uniform-card narrative-card group rounded-3xl border border-lasa-200 bg-white p-6 shadow-[0_20px_40px_-32px_rgba(30,58,52,0.55)] transition-all duration-500 hover:-translate-y-1 hover:border-lasa-300 hover:shadow-lg"
             >
-              <article className="uniform-card narrative-card group rounded-3xl border border-lasa-200 bg-white p-6 shadow-[0_20px_40px_-32px_rgba(30,58,52,0.55)] transition-all duration-500 hover:-translate-y-1 hover:border-lasa-300 hover:shadow-lg">
-                <p className="reading-kicker text-[11px] font-semibold uppercase text-lasa-500">
-                  {program.cue}
-                </p>
-                <h2 className="reading-subtitle mt-2 text-xl font-semibold text-lasa-700">
-                  {program.title}
-                </h2>
-                <ul className="reading-copy-tight mt-3 list-disc space-y-1.5 pl-5 text-[15px] text-lasa-600">
-                  {program.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-              </article>
-            </ScrollReveal>
+              <p className="reading-kicker text-[11px] font-semibold uppercase text-lasa-500">
+                {program.cue}
+              </p>
+              <h2 className="reading-subtitle mt-2 text-xl font-semibold text-lasa-700">
+                {program.title}
+              </h2>
+              <ul className="reading-copy-tight mt-3 list-disc space-y-1.5 pl-5 text-[15px] text-lasa-600">
+                {program.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </article>
           ))}
         </div>
 
-        <ScrollReveal delay={revealDelay(0, { base: 200 })} direction="up">
-          <div className="mt-10 rounded-3xl border border-lasa-200 bg-gradient-to-r from-lasa-700 to-lasa-600 p-6 text-white shadow-lg sm:p-8">
-            <p className="reading-kicker text-[11px] font-semibold uppercase text-lasa-100">
-              Long-Term Commitment
-            </p>
-            <ul className="reading-copy mt-3 list-disc space-y-2 pl-5 text-[15px] text-lasa-100 sm:text-base">
-              <li>
-                Through Sociocare, LASA Foundation Inc. treats society as one extended family,
-                ensuring that no individual is left behind and that every community member feels
-                valued, protected, and supported.
-              </li>
-            </ul>
-          </div>
-        </ScrollReveal>
+        <div className="mt-10 rounded-3xl border border-lasa-200 bg-gradient-to-r from-lasa-700 to-lasa-600 p-6 text-white shadow-lg sm:p-8">
+          <p className="reading-kicker text-[11px] font-semibold uppercase text-lasa-100">
+            Long-Term Commitment
+          </p>
+          <ul className="reading-copy mt-3 list-disc space-y-2 pl-5 text-[15px] text-lasa-100 sm:text-base">
+            <li>
+              Through Sociocare, LASA Foundation Inc. treats society as one extended family,
+              ensuring that no individual is left behind and that every community member feels
+              valued, protected, and supported.
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,3 @@
-import ScrollReveal from '../components/common/ScrollReveal';
-import { revealDelay } from '../constants/motion';
-
 const HEALTHCARE_PILLARS = [
   {
     title: 'Barrier-Free Medical Clinics',
@@ -35,85 +32,72 @@ export default function HealthAndWellness() {
 
       <div className="relative border-b border-lasa-200 bg-gradient-to-b from-lasa-100/95 to-lasa-50/90">
         <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-          <ScrollReveal delay={revealDelay(0, { base: 20 })}>
-            <p className="reading-kicker text-xs font-semibold uppercase text-lasa-500">
-              Holistic Healthcare as a Service
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={revealDelay(1, { base: 20 })}>
-            <h1 className="reading-title mt-3 text-4xl font-display text-lasa-700 sm:text-6xl xl:whitespace-nowrap">
-              Healthcare that honors dignity and access
-            </h1>
-          </ScrollReveal>
-          <ScrollReveal delay={revealDelay(2, { base: 20 })}>
-            <ul className="reading-copy mt-5 list-disc space-y-2 pl-5 text-[15px] text-lasa-600 sm:text-[1.03rem]">
-              <li>
-                At LASA Foundation Inc., we view healthcare not merely as a medical necessity, but
-                as a vital, compassionate community service.
-              </li>
-              <li>
-                Operating under our core mandate to "Love All, Serve All," our healthcare
-                initiatives bridge critical gaps for low-income, uninsured, and vulnerable
-                individuals who face systemic barriers to quality medical care.
-              </li>
-            </ul>
-          </ScrollReveal>
+          <p className="reading-kicker text-xs font-semibold uppercase text-lasa-500">
+            Holistic Healthcare as a Service
+          </p>
+          <h1 className="reading-title mt-3 text-4xl font-display text-lasa-700 sm:text-6xl xl:whitespace-nowrap">
+            Healthcare that honors dignity and access
+          </h1>
+          <ul className="reading-copy mt-5 list-disc space-y-2 pl-5 text-[15px] text-lasa-600 sm:text-[1.03rem]">
+            <li>
+              At LASA Foundation Inc., we view healthcare not merely as a medical necessity, but
+              as a vital, compassionate community service.
+            </li>
+            <li>
+              Operating under our core mandate to "Love All, Serve All," our healthcare
+              initiatives bridge critical gaps for low-income, uninsured, and vulnerable
+              individuals who face systemic barriers to quality medical care.
+            </li>
+          </ul>
         </div>
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-4 pt-10 sm:px-6 sm:pt-14">
-        <ScrollReveal>
-          <div className="narrative-panel rounded-3xl p-6 sm:p-8">
-            <p className="reading-kicker text-[11px] font-semibold uppercase text-lasa-500">
-              Healthcare Model
-            </p>
-            <ul className="reading-copy mt-3 list-disc space-y-2 pl-5 text-[15px] text-lasa-600 sm:text-base">
-              <li>
-                Our service-driven healthcare model focuses on dignity, accessibility, and
-                preventive wellness through three major pillars.
-              </li>
-            </ul>
-          </div>
-        </ScrollReveal>
+        <div className="narrative-panel rounded-3xl p-6 sm:p-8">
+          <p className="reading-kicker text-[11px] font-semibold uppercase text-lasa-500">
+            Healthcare Model
+          </p>
+          <ul className="reading-copy mt-3 list-disc space-y-2 pl-5 text-[15px] text-lasa-600 sm:text-base">
+            <li>
+              Our service-driven healthcare model focuses on dignity, accessibility, and
+              preventive wellness through three major pillars.
+            </li>
+          </ul>
+        </div>
 
         <div className="mt-6 grid gap-5 lg:grid-cols-3 lg:[grid-auto-rows:1fr]">
-          {HEALTHCARE_PILLARS.map((pillar, index) => (
-            <ScrollReveal
+          {HEALTHCARE_PILLARS.map((pillar) => (
+            <article
               key={pillar.title}
-              delay={revealDelay(index, { base: 160 })}
-              direction={index % 2 === 0 ? 'up' : 'left'}
+              className="uniform-card narrative-card group rounded-3xl border border-lasa-200 bg-white p-6 shadow-[0_20px_40px_-32px_rgba(30,58,52,0.55)] transition-all duration-500 hover:-translate-y-1 hover:border-lasa-300 hover:shadow-lg"
             >
-              <article className="uniform-card narrative-card group rounded-3xl border border-lasa-200 bg-white p-6 shadow-[0_20px_40px_-32px_rgba(30,58,52,0.55)] transition-all duration-500 hover:-translate-y-1 hover:border-lasa-300 hover:shadow-lg">
-                <p className="reading-kicker text-[11px] font-semibold uppercase text-lasa-500">
-                  {pillar.cue}
-                </p>
-                <h2 className="reading-subtitle mt-2 text-xl font-semibold text-lasa-700">
-                  {pillar.title}
-                </h2>
-                <ul className="reading-copy-tight mt-3 list-disc space-y-1.5 pl-5 text-[15px] text-lasa-600">
-                  {pillar.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-              </article>
-            </ScrollReveal>
+              <p className="reading-kicker text-[11px] font-semibold uppercase text-lasa-500">
+                {pillar.cue}
+              </p>
+              <h2 className="reading-subtitle mt-2 text-xl font-semibold text-lasa-700">
+                {pillar.title}
+              </h2>
+              <ul className="reading-copy-tight mt-3 list-disc space-y-1.5 pl-5 text-[15px] text-lasa-600">
+                {pillar.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </article>
           ))}
         </div>
 
-        <ScrollReveal delay={revealDelay(0, { base: 210 })} direction="up">
-          <div className="mt-10 rounded-3xl border border-lasa-200 bg-gradient-to-r from-lasa-700 to-lasa-600 p-6 text-white shadow-lg sm:p-8">
-            <p className="reading-kicker text-[11px] font-semibold uppercase text-lasa-100">
-              Service Outcome
-            </p>
-            <ul className="reading-copy mt-3 list-disc space-y-2 pl-5 text-[15px] text-lasa-100 sm:text-base">
-              <li>
-                Through these volunteer-driven services, we translate our five universal values
-                into tangible, life-saving care, ensuring every patient is treated as an
-                individual worthy of compassion and respect.
-              </li>
-            </ul>
-          </div>
-        </ScrollReveal>
+        <div className="mt-10 rounded-3xl border border-lasa-200 bg-gradient-to-r from-lasa-700 to-lasa-600 p-6 text-white shadow-lg sm:p-8">
+          <p className="reading-kicker text-[11px] font-semibold uppercase text-lasa-100">
+            Service Outcome
+          </p>
+          <ul className="reading-copy mt-3 list-disc space-y-2 pl-5 text-[15px] text-lasa-100 sm:text-base">
+            <li>
+              Through these volunteer-driven services, we translate our five universal values
+              into tangible, life-saving care, ensuring every patient is treated as an
+              individual worthy of compassion and respect.
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   );
